@@ -1,14 +1,16 @@
 %{
-#include "simple.tab.h"
+#include "compiler.tab.h"
 extern int line_number;
+extern int col;
 %}
 %option noyywrap
 
 
 NUM      [0-9][0-9]*
-ID       [a-zA-Z0-9][a-zA-Z0-9]*
+ID       [a-zA-Z][a-zA-Z]*
 COM      "/*"(.|\n)*"*/"
-
+WHITESPACE [ \t\r]+
+NEWLINE [\n]
 %%
 
 "if"            { col+=2; printf("%d :FROM FLEX IF %s\n",line_number, yytext); return IF; }
@@ -38,8 +40,8 @@ COM      "/*"(.|\n)*"*/"
 "}"             { col+=1; printf("%d :FROM FLEX RBRACE %s\n",line_number, yytext); return *yytext;}
 {ID}            { col+=strlen(yytext); printf("%d :FROM FLEX IDENTIFIER %s\n",line_number, yytext); return ID;}
 {NUM}           { col+=strlen(yytext); printf("%d :FROM FLEX NUMBER %s\n",line_number, yytext); return NUM;}
-{COM}           { col+=strlen(yytext) } /* eat up comments */
-[ \t\r]+        { col+=strlen(yytext) } /* eat up whitespace */
-[\n]            { line_number++; }
+{COM}           { col+=strlen(yytext); } /* eat up comments */
+{WHITESPACE}    { col+=strlen(yytext); } /* eat up whitespace */
+{NEWLINE}       { col = 0; line_number++; }
 
 %%

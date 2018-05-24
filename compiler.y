@@ -1,6 +1,6 @@
 %{
    #include <stdarg.h>
-   #include "simple_shared.h"
+   #include "compiler_shared.h"
    #define YYSTYPE char *
    void yyerror (char const *);
    int yydebug=1;
@@ -178,6 +178,8 @@ fprintf(stderr,"%s\n",s);
 main ()
 {
   if(yyparse ()==0){
-    printf("Valid syntax");
-  };
+    printf("Syntax valid");
+  }else{
+    printf("Syntax error at line: %d col: %d", line_number, col);
+  }
 }

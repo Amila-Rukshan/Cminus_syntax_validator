@@ -481,12 +481,13 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "simple.flex"
-#line 2 "simple.flex"
-#include "simple.tab.h"
+#line 1 "compiler.flex"
+#line 2 "compiler.flex"
+#include "compiler.tab.h"
 extern int line_number;
-#line 488 "lex.yy.c"
+extern int col;
 #line 489 "lex.yy.c"
+#line 490 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -703,10 +704,10 @@ YY_DECL
 		}
 
 	{
-#line 12 "simple.flex"
+#line 14 "compiler.flex"
 
 
-#line 709 "lex.yy.c"
+#line 710 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -765,162 +766,162 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "simple.flex"
-{ printf("%d :FROM FLEX IF %s\n",line_number, yytext); return IF; }
+#line 16 "compiler.flex"
+{ col+=2; printf("%d :FROM FLEX IF %s\n",line_number, yytext); return IF; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 15 "simple.flex"
-{ printf("%d :FROM FLEX ELSE %s\n",line_number, yytext); return ELSE; }
+#line 17 "compiler.flex"
+{ col+=4; printf("%d :FROM FLEX ELSE %s\n",line_number, yytext); return ELSE; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "simple.flex"
-{ printf("%d :FROM FLEX INT %s\n",line_number, yytext); return INT; }
+#line 18 "compiler.flex"
+{ col+=3; printf("%d :FROM FLEX INT %s\n",line_number, yytext); return INT; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "simple.flex"
-{ printf("%d :FROM FLEX RETURN %s\n",line_number, yytext); return RETURN; }
+#line 19 "compiler.flex"
+{ col+=6; printf("%d :FROM FLEX RETURN %s\n",line_number, yytext); return RETURN; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 18 "simple.flex"
-{ printf("%d :FROM FLEX VOID %s\n",line_number, yytext); return VOID; }
+#line 20 "compiler.flex"
+{ col+=4; printf("%d :FROM FLEX VOID %s\n",line_number, yytext); return VOID; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 19 "simple.flex"
-{ printf("%d :FROM FLEX WHILE %s\n",line_number, yytext); return WHILE; }
+#line 21 "compiler.flex"
+{ col+=5; printf("%d :FROM FLEX WHILE %s\n",line_number, yytext); return WHILE; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 20 "simple.flex"
-{ printf("%d :FROM FLEX PLUS %s\n",line_number, yytext); return *yytext;}
+#line 22 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX PLUS %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 21 "simple.flex"
-{ printf("%d :FROM FLEX MINUS %s\n",line_number, yytext); return *yytext;}
+#line 23 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX MINUS %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 22 "simple.flex"
-{ printf("%d :FROM FLEX MUL %s\n",line_number, yytext); return *yytext;}
+#line 24 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX MUL %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 23 "simple.flex"
-{ printf("%d :FROM FLEX DIV %s\n",line_number, yytext); return *yytext;}
+#line 25 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX DIV %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 24 "simple.flex"
-{ printf("%d :FROM FLEX LT %s\n",line_number, yytext); return *yytext;}
+#line 26 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX LT %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 25 "simple.flex"
-{ printf("%d :FROM FLEX LTEQ %s\n",line_number, yytext); return *yytext;}
+#line 27 "compiler.flex"
+{ col+=2; printf("%d :FROM FLEX LTEQ %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 26 "simple.flex"
-{ printf("%d :FROM FLEX GT %s\n",line_number, yytext); return *yytext;}
+#line 28 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX GT %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 27 "simple.flex"
-{ printf("%d :FROM FLEX GTEQ %s\n",line_number, yytext); return *yytext;}
+#line 29 "compiler.flex"
+{ col+=2; printf("%d :FROM FLEX GTEQ %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 28 "simple.flex"
-{ printf("%d :FROM FLEX EQ %s\n",line_number, yytext); return *yytext;}
+#line 30 "compiler.flex"
+{ col+=2; printf("%d :FROM FLEX EQ %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 29 "simple.flex"
-{ printf("%d :FROM FLEX NEQ %s\n",line_number, yytext); return *yytext;}
+#line 31 "compiler.flex"
+{ col+=2; printf("%d :FROM FLEX NEQ %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 30 "simple.flex"
-{ printf("%d :FROM FLEX ASSIGN %s\n",line_number, yytext); return *yytext;}
+#line 32 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX ASSIGN %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 31 "simple.flex"
-{ printf("%d :FROM FLEX SEMICOLON %s\n",line_number, yytext); return *yytext;}
+#line 33 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX SEMICOLON %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 32 "simple.flex"
-{ printf("%d :FROM FLEX COMMA %s\n",line_number, yytext); return *yytext;}
+#line 34 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX COMMA %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 33 "simple.flex"
-{ printf("%d :FROM FLEX LPAREN %s\n",line_number, yytext); return *yytext;}
+#line 35 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX LPAREN %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 34 "simple.flex"
-{ printf("%d :FROM FLEX RPAREN %s\n",line_number, yytext); return *yytext;}
+#line 36 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX RPAREN %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 35 "simple.flex"
-{ printf("%d :FROM FLEX LBRACKET %s\n",line_number, yytext); return *yytext;}
+#line 37 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX LBRACKET %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 36 "simple.flex"
-{ printf("%d :FROM FLEX RBRACKET %s\n",line_number, yytext); return *yytext;}
+#line 38 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX RBRACKET %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 37 "simple.flex"
-{ printf("%d :FROM FLEX LBRACE %s\n",line_number, yytext); return *yytext;}
+#line 39 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX LBRACE %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 38 "simple.flex"
-{ printf("%d :FROM FLEX RBRACE %s\n",line_number, yytext); return *yytext;}
+#line 40 "compiler.flex"
+{ col+=1; printf("%d :FROM FLEX RBRACE %s\n",line_number, yytext); return *yytext;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 39 "simple.flex"
-{ printf("%d :FROM FLEX IDENTIFIER %s\n",line_number, yytext); return ID;}
+#line 41 "compiler.flex"
+{ col+=strlen(yytext); printf("%d :FROM FLEX IDENTIFIER %s\n",line_number, yytext); return ID;}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 40 "simple.flex"
-{ printf("%d :FROM FLEX NUMBER %s\n",line_number, yytext); return NUM;}
+#line 42 "compiler.flex"
+{ col+=strlen(yytext); printf("%d :FROM FLEX NUMBER %s\n",line_number, yytext); return NUM;}
 	YY_BREAK
 case 28:
 /* rule 28 can match eol */
 YY_RULE_SETUP
-#line 41 "simple.flex"
-/* eat up whitespace */
+#line 43 "compiler.flex"
+{ col+=strlen(yytext); } /* eat up comments */
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 42 "simple.flex"
-/* eat up whitespace */
+#line 44 "compiler.flex"
+{ col+=strlen(yytext); } /* eat up whitespace */
 	YY_BREAK
 case 30:
 /* rule 30 can match eol */
 YY_RULE_SETUP
-#line 43 "simple.flex"
-{ line_number++; }
+#line 45 "compiler.flex"
+{ col = 0; line_number++; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 45 "simple.flex"
+#line 47 "compiler.flex"
 ECHO;
 	YY_BREAK
-#line 923 "lex.yy.c"
+#line 924 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1923,6 +1924,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 45 "simple.flex"
+#line 47 "compiler.flex"
 
 

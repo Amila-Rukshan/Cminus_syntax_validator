@@ -1,5 +1,3 @@
-/* sdfsdfdmhbj sd sdfsdf sd */
-
 int x[10];
 int minloc ( int a[], int low, int high ){
 int i; int x; int k;
@@ -9,6 +7,7 @@ i = low + 1;
 while(i< high)
 {if (a[i] < x)
 { x = a[i];
+  /* A program to perform selection sort on a 10 element array. */
 k = i; }
 i = i + 1;
 }
@@ -26,7 +25,6 @@ a[k] = a[i];
 a[i] = t;
 i = i + 1;
 }
-/* sdfsdfdmhbj sd sdfsdf sd */
 }
 void main (void)
 { int i;
@@ -39,5 +37,4 @@ i = 0;
 while (i < 10)
 { output (x[i]);
 i = i + 1; }
-/* sdfsdfdmhbj sd sdfsdf sd */
 }

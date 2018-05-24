@@ -62,17 +62,17 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "simple.y" /* yacc.c:339  */
+#line 1 "compiler.y" /* yacc.c:339  */
 
    #include <stdarg.h>
-   #include "simple_shared.h"
+   #include "compiler_shared.h"
    #define YYSTYPE char *
    void yyerror (char const *);
    int yydebug=1;
    int indent=0;
    char *iden_dum;
 
-#line 76 "simple.tab.c" /* yacc.c:339  */
+#line 76 "compiler.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -91,9 +91,9 @@
 #endif
 
 /* In a future release of Bison, this section will be replaced
-   by #include "simple.tab.h".  */
-#ifndef YY_YY_SIMPLE_TAB_H_INCLUDED
-# define YY_YY_SIMPLE_TAB_H_INCLUDED
+   by #include "compiler.tab.h".  */
+#ifndef YY_YY_COMPILER_TAB_H_INCLUDED
+# define YY_YY_COMPILER_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 1
@@ -130,11 +130,11 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_SIMPLE_TAB_H_INCLUDED  */
+#endif /* !YY_YY_COMPILER_TAB_H_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
-#line 138 "simple.tab.c" /* yacc.c:358  */
+#line 138 "compiler.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1278,31 +1278,31 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 23 "simple.y" /* yacc.c:1646  */
+#line 23 "compiler.y" /* yacc.c:1646  */
     { printf("%3d: FROM BISON PROGRAM\n", line_number); }
-#line 1284 "simple.tab.c" /* yacc.c:1646  */
+#line 1284 "compiler.tab.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 27 "simple.y" /* yacc.c:1646  */
+#line 27 "compiler.y" /* yacc.c:1646  */
     { printf("%3d: FROM BISON DECLARATION-LIST\n", line_number); }
-#line 1290 "simple.tab.c" /* yacc.c:1646  */
+#line 1290 "compiler.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 32 "simple.y" /* yacc.c:1646  */
+#line 32 "compiler.y" /* yacc.c:1646  */
     { printf("%3d: FROM BISON VAR-DECLARATION-LIST\n", line_number); }
-#line 1296 "simple.tab.c" /* yacc.c:1646  */
+#line 1296 "compiler.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 33 "simple.y" /* yacc.c:1646  */
+#line 33 "compiler.y" /* yacc.c:1646  */
     { printf("%3d: FROM BISON FUN-DECLARATION-LIST\n", line_number); }
-#line 1302 "simple.tab.c" /* yacc.c:1646  */
+#line 1302 "compiler.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1306 "simple.tab.c" /* yacc.c:1646  */
+#line 1306 "compiler.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1530,7 +1530,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 170 "simple.y" /* yacc.c:1906  */
+#line 170 "compiler.y" /* yacc.c:1906  */
 
 
 #include <stdio.h>
@@ -1542,6 +1542,8 @@ fprintf(stderr,"%s\n",s);
 main ()
 {
   if(yyparse ()==0){
-    printf("Valid syntax");
-  };
+    printf("Syntax valid");
+  }else{
+    printf("Syntax error at line: %d col: %d", line_number, col);
+  }
 }

@@ -1,11 +1,11 @@
-simple: lex.yy.o simple.tab.o
-	gcc -o simple $^
+compiler: lex.yy.o compiler.tab.o
+	gcc -o compiler $^
 
-simple.tab.h: simple.y
-	bison --debug --verbose -d simple.y
+compiler.tab.h: compiler.y
+	bison --debug --verbose -d compiler.y
 
-simple.tab.c: simple.y
-	bison -d simple.y
+compiler.tab.c: compiler.y
+	bison -d compiler.y
 
-lex.yy.c: simple.flex simple.tab.h
-	flex  simple.flex
+lex.yy.c: compiler.flex compiler.tab.h
+	flex  compiler.flex
